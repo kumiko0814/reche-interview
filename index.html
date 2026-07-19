@@ -23,15 +23,24 @@ img{max-width:100%;display:block}
 a{color:inherit}
 
 /* header */
-.hd{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);
-  -webkit-backdrop-filter:saturate(1.4) blur(10px);backdrop-filter:saturate(1.4) blur(10px);
-  border-bottom:1px solid var(--line)}
-.hd__in{max-width:1180px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:9px;text-decoration:none}
-.brand .crown{width:30px;height:24px}
-.brand b{font-size:21px;color:var(--navy2);font-weight:800;letter-spacing:.02em}
-.hd__r{font-size:12px;color:var(--sub);text-decoration:none;letter-spacing:.08em}
-.hd__r b{color:var(--navy);font-weight:700}
+.topbar{height:3px;background:linear-gradient(90deg,var(--pink2),var(--pink) 45%,var(--blue))}
+.hd{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);
+  -webkit-backdrop-filter:saturate(1.5) blur(14px);backdrop-filter:saturate(1.5) blur(14px);
+  border-bottom:1px solid var(--line);box-shadow:0 6px 20px -18px rgba(38,64,95,.5)}
+.hd__in{max-width:1180px;margin:0 auto;padding:13px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none}
+.brand .crown{width:31px;height:25px;flex:none}
+.brand__tx{display:flex;flex-direction:column;line-height:1.05}
+.brand__tx b{font-size:21px;color:var(--navy2);font-weight:800;letter-spacing:.03em}
+.brand__tx i{font-style:normal;font-size:9.5px;color:var(--sub);letter-spacing:.24em;margin-top:3px}
+.hd__op{display:inline-flex;align-items:center;gap:7px;text-decoration:none;
+  font-size:11px;color:var(--sub);letter-spacing:.1em;
+  border:1px solid var(--line);padding:7px 14px;border-radius:999px;background:#fff;
+  transition:border-color .2s ease, box-shadow .2s ease}
+.hd__op:hover{border-color:#d5c1c7;box-shadow:0 8px 18px -12px rgba(38,64,95,.4)}
+.hd__op .mmark{width:19px;height:17px;flex:none}
+.hd__op span{opacity:.85}
+.hd__op b{color:var(--navy2);font-weight:800;font-size:13px;letter-spacing:.02em}
 
 /* hero */
 .hero{position:relative;overflow:hidden;text-align:center;
@@ -43,10 +52,11 @@ a{color:inherit}
 .hero h1{margin:0;color:var(--navy2);font-size:clamp(28px,6vw,44px);font-weight:800;letter-spacing:.06em;line-height:1.28}
 .hero .lead{margin:16px auto 0;max-width:640px;color:var(--navy);font-size:clamp(14px,3.4vw,16.5px);font-weight:600;line-height:1.9}
 .hero .note{margin:8px auto 0;max-width:640px;color:var(--sub);font-size:12.5px}
-.hero__photo{max-width:820px;margin:32px auto 0;border-radius:20px;overflow:hidden;
-  box-shadow:0 24px 60px -24px rgba(38,64,95,.4), 0 6px 20px -10px rgba(38,64,95,.28);
-  border:5px solid #fff}
-.hero__photo img{width:100%}
+.hero__art{max-width:530px;margin:30px auto 0;padding:20px 30px 14px;border-radius:26px;
+  background:linear-gradient(180deg,#ffffff 0%,#f2f8fd 100%);
+  border:1px solid var(--line);
+  box-shadow:0 26px 60px -32px rgba(38,64,95,.42)}
+.hero__art img{width:100%;display:block}
 
 /* section */
 .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
@@ -88,12 +98,22 @@ a{color:inherit}
 .partner{margin-top:56px;background:linear-gradient(180deg,var(--white),var(--bg2));
   border-top:1px solid var(--line)}
 .partner__in{max-width:1180px;margin:0 auto;padding:54px 22px 60px;text-align:center}
-.partner__row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px;max-width:760px;margin:28px auto 0}
-.pill{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 16px;
-  box-shadow:0 12px 30px -22px rgba(38,64,95,.5)}
-.pill b{display:block;color:var(--navy2);font-size:17px;font-weight:800;letter-spacing:.04em;margin-bottom:6px}
+.partner__row{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px;max-width:780px;margin:30px auto 0}
+.pill{display:flex;flex-direction:column;align-items:center;text-decoration:none;
+  background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px 18px 20px;
+  box-shadow:0 12px 30px -22px rgba(38,64,95,.5);
+  transition:transform .26s ease, box-shadow .26s ease}
+.pill:hover{transform:translateY(-5px);box-shadow:0 22px 44px -24px rgba(38,64,95,.55)}
+.pill b{display:block;color:var(--navy2);font-size:18px;font-weight:800;letter-spacing:.04em;margin-bottom:6px}
 .pill span{color:var(--sub);font-size:12.5px}
-.partner__note{margin:26px auto 0;max-width:600px;color:var(--navy);font-size:13.5px;font-weight:600}
+.pill__go{margin-top:16px;display:inline-flex;align-items:center;gap:8px;font-style:normal;
+  font-size:12px;font-weight:800;letter-spacing:.05em;color:#fff;
+  padding:9px 18px;border-radius:999px;
+  background:linear-gradient(120deg,var(--pink2),var(--pink));
+  box-shadow:0 8px 18px -8px rgba(189,120,134,.7)}
+.pill__go .play{width:0;height:0;border-style:solid;border-width:5px 0 5px 8px;
+  border-color:transparent transparent transparent #fff;display:inline-block}
+.partner__note{margin:28px auto 0;max-width:600px;color:var(--navy);font-size:13.5px;font-weight:600}
 
 /* footer */
 .ft{background:var(--navy2);color:#cdd9e6;text-align:center;padding:40px 22px}
@@ -110,27 +130,43 @@ a{color:inherit}
   .card__catch{font-size:12.6px}
   .card__desc{font-size:11.8px;line-height:1.75}
   .card__btn{font-size:12.5px;padding:10px}
-  .hero{padding:44px 18px 30px}
+  .hero{padding:40px 16px 28px}
   .sec{padding:40px 0 4px}
-  .hero__photo{border-width:4px;border-radius:16px}
+  .hero__art{padding:16px 16px 12px;border-radius:20px}
   .hero .eyebrow{letter-spacing:.22em;font-size:11px}
   .sec__en{letter-spacing:.16em;font-size:10.5px}
   .partner__in .sec__en{letter-spacing:.16em}
+  .hd__in{padding:11px 16px}
+  .brand__tx b{font-size:19px}
+  .brand__tx i{font-size:8px;letter-spacing:.18em}
+  .hd__op{padding:6px 11px;font-size:10px}
+  .hd__op span{display:none}
 }
 @media(max-width:380px){
   .grid{grid-template-columns:1fr}
 }
 </style>
 
+<div class="topbar"></div>
 <header class="hd">
   <div class="hd__in">
-    <a class="brand" href="https://merone.jp/" target="_blank" rel="noopener"><svg class="crown" viewBox="0 0 120 96" role="img" aria-label="Re:che">
+    <a class="brand" href="https://merone.jp/" target="_blank" rel="noopener">
+      <svg class="crown" viewBox="0 0 120 96" role="img" aria-label="Re:che">
 <defs><linearGradient id="cg" x1="0" y1="1" x2="1" y2="0">
 <stop offset="0" stop-color="#7fb0d2"/><stop offset=".55" stop-color="#c88fb0"/><stop offset="1" stop-color="#e0a6b4"/></linearGradient></defs>
 <path fill="url(#cg)" d="M12 30l22 20 26-40 26 40 22-20-8 54H20z"/>
 <circle cx="12" cy="26" r="8" fill="url(#cg)"/><circle cx="108" cy="26" r="8" fill="url(#cg)"/><circle cx="60" cy="8" r="9" fill="url(#cg)"/>
-</svg><b>Re:che</b></a>
-    <a class="hd__r" href="https://merone.jp/" target="_blank" rel="noopener">在宅型サステナ物販スクール ｜ by <b>Merone</b></a>
+</svg>
+      <span class="brand__tx"><b>Re:che</b><i>ZAITAKU RESELLING SCHOOL</i></span>
+    </a>
+    <a class="hd__op" href="https://merone.jp/" target="_blank" rel="noopener">
+      <span>運営</span><svg class="mmark" viewBox="0 0 48 44" role="img" aria-label="Merone">
+<defs><linearGradient id="mg" x1="0" y1="1" x2="1" y2="0">
+<stop offset="0" stop-color="#7fb0d2"/><stop offset=".5" stop-color="#c88fb0"/><stop offset="1" stop-color="#e0a6b4"/></linearGradient></defs>
+<path fill="url(#mg)" d="M24 41C11 32 3 25 3 15.5 3 9 8 4 14 4c4 0 7.5 2.3 10 6 2.5-3.7 6-6 10-6 6 0 11 5 11 11.5C45 25 37 32 24 41z"/>
+<path fill="#fff" d="M15 30V17l9 8 9-8v13h-4v-6l-5 4-5-4v6z" opacity=".92"/>
+</svg><b>Merone</b>
+    </a>
   </div>
 </header>
 
@@ -145,7 +181,7 @@ a{color:inherit}
   <h1>生徒インタビュー</h1>
   <p class="lead">ご自身の状況に似ている方の声を、<br>チェックしてみましょう。</p>
   <p class="note">在宅型サステナ物販スクール「Re:che（リッシュ）」で一歩を踏み出した皆さんのリアルな声です。</p>
-  <div class="hero__photo"><img src="img/group.jpg" alt="Re:che 生徒のみなさま" width="1500" height="844"></div>
+  <div class="hero__art"><img src="img/hero.jpg" alt="Re:che 在宅物販スクール" width="1298" height="1081"></div>
 </section>
 
 <div class="wrap">
@@ -441,9 +477,18 @@ a{color:inherit}
     <span class="sec__en">WITH&nbsp;OTHER&nbsp;SCHOOLS</span>
     <span class="sec__jp">他の副業スクールで学びながら活動中</span>
     <div class="partner__row">
-      <div class="pill"><b>ABCash</b><span>金銭管理を学びながら</span></div>
-      <div class="pill"><b>SHElikes</b><span>スキル・キャリアと両立</span></div>
-      <div class="pill"><b>Famm</b><span>ママのスキルアップと両立</span></div>
+      <a class="pill" href="https://youtube.com/playlist?list=PLxeAji6a8NFdA-s_QF3J_gey25WGKZBSS" target="_blank" rel="noopener">
+        <b>ABCash</b><span>金銭管理を学びながら</span>
+        <em class="pill__go"><span class="play"></span>インタビューを見る</em>
+      </a>
+      <a class="pill" href="https://youtube.com/playlist?list=PLxeAji6a8NFdxg_manhlIfkmAYkdDZywM" target="_blank" rel="noopener">
+        <b>SHElikes</b><span>スキル・キャリアと両立</span>
+        <em class="pill__go"><span class="play"></span>インタビューを見る</em>
+      </a>
+      <a class="pill" href="https://youtube.com/playlist?list=PLxeAji6a8NFeege7RhaZ-kTsr22vzJiYh" target="_blank" rel="noopener">
+        <b>Famm</b><span>ママのスキルアップと両立</span>
+        <em class="pill__go"><span class="play"></span>インタビューを見る</em>
+      </a>
     </div>
     <p class="partner__note">学びの掛け合わせで、無理なく在宅物販の成果を実現しています。</p>
   </div>
